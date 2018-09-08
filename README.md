@@ -11,7 +11,7 @@ Option to complete the todo.
 
 
 # ToDo List
-<!-- background: #2d2422 -->
+<!-- background: red -->
 <img src="https://user-images.githubusercontent.com/42260005/45251053-76b98400-b35d-11e8-8ec6-765054ca5427.PNG" width="300px"/>
 
 # ToDo Add
