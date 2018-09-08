@@ -11,9 +11,8 @@ Option to complete the todo.
 
 
 # ToDo List
-<div background-color="red">
+<!-- background: #2d2422 -->
 <img src="https://user-images.githubusercontent.com/42260005/45251053-76b98400-b35d-11e8-8ec6-765054ca5427.PNG" width="300px"/>
-</div>
 
 # ToDo Add
 <img src="https://user-images.githubusercontent.com/42260005/45251063-a36d9b80-b35d-11e8-9b5e-60b9ef670048.PNG" width="300px"/>
