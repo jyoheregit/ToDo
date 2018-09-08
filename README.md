@@ -9,16 +9,14 @@ Screens:
 
 Option to complete the todo.
 
-
 # ToDo List
-<!-- background: red -->
-<img src="https://user-images.githubusercontent.com/42260005/45251053-76b98400-b35d-11e8-8ec6-765054ca5427.PNG" width="300px"/>
+<img src="https://user-images.githubusercontent.com/42260005/45251396-1a596300-b363-11e8-96b5-75bf8357c7a1.jpg" width="300px"/>
 
 # ToDo Add
-<img src="https://user-images.githubusercontent.com/42260005/45251063-a36d9b80-b35d-11e8-9b5e-60b9ef670048.PNG" width="300px"/>
+<img src="https://user-images.githubusercontent.com/42260005/45251398-1cbbbd00-b363-11e8-917c-4b058c5f0eec.jpg" width="300px"/>
 
 # ToDo Edit
-<img src="https://user-images.githubusercontent.com/42260005/45251071-b97b5c00-b35d-11e8-9a8f-6cc98d6b63bf.PNG" width="300px"/>
+<img src="https://user-images.githubusercontent.com/42260005/45251400-21807100-b363-11e8-95c8-0594d99332e0.jpg" width="300px"/>
 
 # ToDo Actions
-<img src="https://user-images.githubusercontent.com/42260005/45251080-d2840d00-b35d-11e8-9422-0cafe41befd9.PNG" width="300px">
+<img src="https://user-images.githubusercontent.com/42260005/45251401-26ddbb80-b363-11e8-8d2e-9bd090940213.jpg" width="300px">
