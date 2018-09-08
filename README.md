@@ -9,7 +9,7 @@ Screens:
 
 Option to complete the todo.
 
-<img src="https://user-images.githubusercontent.com/42260005/45251053-76b98400-b35d-11e8-8ec6-765054ca5427.PNG" width="1242px" height="2208px">
+<img src="https://user-images.githubusercontent.com/42260005/45251053-76b98400-b35d-11e8-8ec6-765054ca5427.PNG" width="500px">
 
 # ToDo List
 ![img_1719](https://user-images.githubusercontent.com/42260005/45251053-76b98400-b35d-11e8-8ec6-765054ca5427.PNG | width=100)
