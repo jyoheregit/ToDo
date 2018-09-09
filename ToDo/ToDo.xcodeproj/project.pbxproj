@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,10 @@
 		B111906D213AEBBB00E27667 /* ToDoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B111906A213AEBBB00E27667 /* ToDoCell.xib */; };
 		B111906E213AEBBB00E27667 /* ToDoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B111906A213AEBBB00E27667 /* ToDoCell.xib */; };
 		B111906F213AEBBB00E27667 /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B111906B213AEBBB00E27667 /* ToDoCell.swift */; };
+		B13465092144CEA300319B3E /* EventsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13465082144CEA300319B3E /* EventsManager.swift */; };
+		B134650C2144CEC100319B3E /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B134650B2144CEC100319B3E /* EventKit.framework */; };
+		B134650E214515B600319B3E /* ToDo+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B134650D214515B600319B3E /* ToDo+Extension.swift */; };
+		B134651021451AE200319B3E /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B134650F21451AE200319B3E /* NotificationsManager.swift */; };
 		B13ED45B2142DA61007CB62D /* ToDoAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13ED45A2142DA61007CB62D /* ToDoAddViewController.swift */; };
 		B1C259B7213969B200A43854 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C259B6213969B200A43854 /* AppDelegate.swift */; };
 		B1C259BC213969B200A43854 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1C259BA213969B200A43854 /* Main.storyboard */; };
@@ -74,6 +78,10 @@
 /* Begin PBXFileReference section */
 		B111906A213AEBBB00E27667 /* ToDoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToDoCell.xib; sourceTree = "<group>"; };
 		B111906B213AEBBB00E27667 /* ToDoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
+		B13465082144CEA300319B3E /* EventsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsManager.swift; sourceTree = "<group>"; };
+		B134650B2144CEC100319B3E /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		B134650D214515B600319B3E /* ToDo+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDo+Extension.swift"; sourceTree = "<group>"; };
+		B134650F21451AE200319B3E /* NotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
 		B13ED45A2142DA61007CB62D /* ToDoAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoAddViewController.swift; sourceTree = "<group>"; };
 		B1C259B3213969B200A43854 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1C259B6213969B200A43854 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B134650C2144CEC100319B3E /* EventKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +141,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B134650A2144CEC100319B3E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B134650B2144CEC100319B3E /* EventKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B1C259AA213969B200A43854 = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +156,7 @@
 				B1C259CA213969B400A43854 /* ToDoTests */,
 				B1C259D5213969B400A43854 /* ToDoUITests */,
 				B1C259B4213969B200A43854 /* Products */,
+				B134650A2144CEC100319B3E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -270,6 +288,7 @@
 				B1E163A8213D8D37006D4A4A /* UITableViewCell+Extension.swift */,
 				B1E163E92141187A006D4A4A /* UIStoryboard+Extension.swift */,
 				B1E163F121411A87006D4A4A /* DateFormatter+Extension.swift */,
+				B134650D214515B600319B3E /* ToDo+Extension.swift */,
 				B1E163F521411A9B006D4A4A /* Date+Extension.swift */,
 			);
 			path = Extension;
@@ -279,6 +298,8 @@
 			isa = PBXGroup;
 			children = (
 				B1E163FA21412D11006D4A4A /* Constants.swift */,
+				B13465082144CEA300319B3E /* EventsManager.swift */,
+				B134650F21451AE200319B3E /* NotificationsManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -351,19 +372,22 @@
 				TargetAttributes = {
 					B1C259B2213969B200A43854 = {
 						CreatedOnToolsVersion = 9.4.1;
+						ProvisioningStyle = Automatic;
 					};
 					B1C259C6213969B400A43854 = {
 						CreatedOnToolsVersion = 9.4.1;
+						ProvisioningStyle = Automatic;
 						TestTargetID = B1C259B2213969B200A43854;
 					};
 					B1C259D1213969B400A43854 = {
 						CreatedOnToolsVersion = 9.4.1;
+						ProvisioningStyle = Automatic;
 						TestTargetID = B1C259B2213969B200A43854;
 					};
 				};
 			};
 			buildConfigurationList = B1C259AE213969B200A43854 /* Build configuration list for PBXProject "ToDo" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -431,8 +455,10 @@
 				B1E163C1213D8D58006D4A4A /* BaseCell.swift in Sources */,
 				B1E163AA213D8D37006D4A4A /* UITableViewCell+Extension.swift in Sources */,
 				B1E163C4213D8D58006D4A4A /* DateTimePickerCell.swift in Sources */,
+				B134650E214515B600319B3E /* ToDo+Extension.swift in Sources */,
 				B1E163EA2141187A006D4A4A /* UIStoryboard+Extension.swift in Sources */,
 				B1C259EC21396B4E00A43854 /* ToDoListViewController.swift in Sources */,
+				B134651021451AE200319B3E /* NotificationsManager.swift in Sources */,
 				B1C259B7213969B200A43854 /* AppDelegate.swift in Sources */,
 				B13ED45B2142DA61007CB62D /* ToDoAddViewController.swift in Sources */,
 				B1E163AD213D8D37006D4A4A /* UITableView+Extension.swift in Sources */,
@@ -440,6 +466,7 @@
 				B1E163CD213D8D58006D4A4A /* TextViewCell.swift in Sources */,
 				B1E163D2213D8D78006D4A4A /* BaseViewController.swift in Sources */,
 				B1E163F221411A87006D4A4A /* DateFormatter+Extension.swift in Sources */,
+				B13465092144CEA300319B3E /* EventsManager.swift in Sources */,
 				B1C259FE213A40B200A43854 /* CoreDataManager.swift in Sources */,
 				B1E163BB213D8D58006D4A4A /* TextCell.swift in Sources */,
 				B1E163F621411A9B006D4A4A /* Date+Extension.swift in Sources */,
@@ -616,8 +643,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -629,10 +655,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "$(SRCROOT)/ToDo/Resources/Config/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.superb.todo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -647,10 +670,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "$(SRCROOT)/ToDo/Resources/Config/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.superb.todo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -665,11 +685,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ToDoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.superb.todo.ToDoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -685,11 +701,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ToDoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.superb.todo.ToDoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -704,11 +716,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ToDoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.superb.todo.ToDoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -723,11 +731,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ToDoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.superb.todo.ToDoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

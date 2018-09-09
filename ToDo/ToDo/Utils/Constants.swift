@@ -11,7 +11,7 @@ struct Constants {
     struct Storyboard {
         static let Main = "Main"
     }
-    
+
     struct SegueIdentifier {
         static let ToDoAdd = "ToDoAddViewController"
         static let ToDoList = "ToDoListViewController"
@@ -31,6 +31,15 @@ struct Constants {
     
     struct Message {
         static let ReminderNotSet = "Reminder not set"
+    }
+    
+    struct Notification {
+        static let Enabled = "isNotificationEnabled"
+        static let ToDoDue = "ToDoDue"
+    }
+    
+    struct Event {
+        static let ReminderAccess = "ReminderAccess"
     }
     
     static let EmptyString = ""

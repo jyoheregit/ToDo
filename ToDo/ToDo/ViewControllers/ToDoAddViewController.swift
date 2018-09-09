@@ -14,7 +14,7 @@ class ToDoAddViewController: BaseViewController {
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     var todo : ToDo?
-    
+        
     var titleText : String? {
         didSet {
             self.setSaveButtonState()
@@ -62,8 +62,9 @@ class ToDoAddViewController: BaseViewController {
         
         todo?.title = titleText
         todo?.desc = descriptionText
-        todo?.reminder = reminderDate
+        todo?.setReminder(reminderDate: reminderDate)
         todo?.completed = todo?.completed ?? false
+        todo?.createReminder()
         
         self.dismiss(animated: true, completion: nil)
     }

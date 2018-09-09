@@ -41,6 +41,7 @@ class ToDoListViewController : UIViewController {
     private func setupViews() {
         self.title = Constants.ViewControllerTitle.ToDoList
         tableView.registerNibForCellClass(CellType.todo.getClass())
+        self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 15, right: 0)
     }
     
     private func updateView() {
@@ -130,13 +131,14 @@ extension ToDoListViewController: UITableViewDelegate {
             let todo = self.fetchedResultsController.object(at: indexPath)
 
             let deleteAction = UITableViewRowAction(style: .destructive, title: Constants.Action.Delete) { (action, indexPath) in
+                todo.delete()
                 todo.managedObjectContext?.delete(todo)
                 CoreDataManager.shared.saveContext()
             }
         
             let completeTitle = todo.completed ? Constants.Action.NotComplete : Constants.Action.Complete
             let completeAction = UITableViewRowAction(style: .normal, title: completeTitle){ (action, indexPath) in
-                todo.completed = !todo.completed
+                todo.complete(completed: !todo.completed)
                 CoreDataManager.shared.saveContext()
             }
             completeAction.backgroundColor = UIColor.green

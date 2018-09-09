@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import UserNotifications
+import EventKit
 
 class DateTimePickerCell: BaseCell {
 
@@ -42,19 +44,32 @@ class DateTimePickerCell: BaseCell {
     }
     
     @IBAction func switchToggle(_ sender: UISwitch) {
+        
+        if(sender.isOn){
+            requestNotificationPermission()
+        }
+       
         datePicker.isHidden = !datePicker.isHidden
         date = datePicker.isHidden  ? nil : Date()
         dateTimeChangedBlock?(self.date)
     }
+        
+    private func requestNotificationPermission() {
+        
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+            if granted {
+                UserDefaults.standard.setValue(true, forKey: Constants.Notification.Enabled)
+            } else {
+                UserDefaults.standard.setValue(false, forKey: Constants.Notification.Enabled)
+            }
+        }
+    }
     
-    @IBAction func dateTimePickerSelected(_ sender: UIDatePicker) {
+   @IBAction func dateTimePickerSelected(_ sender: UIDatePicker) {
         
         date = datePicker.date
         dateTimeChangedBlock?(self.date)
     }
-    
-    
-    
-    
     
 }

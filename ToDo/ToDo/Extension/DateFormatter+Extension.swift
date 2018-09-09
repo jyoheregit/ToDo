@@ -12,8 +12,7 @@ extension DateFormatter {
     
     static let dateAndTime: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/YYYY HH:mm:ss"
+        formatter.dateFormat = "dd/MM/YYYY HH:mm"
         return formatter
     }()
-    
 }
