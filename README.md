@@ -7,7 +7,11 @@ Screens:
 1. A list of todos, with options to remove, add, or edit. 
 2. Screen with 3 fields (title, description, reminder date time) for adding or editing the todo.
 
-Option to complete the todo. Some refinement yet to be done for reminders logic.
+Option to complete the todo. 
+
+Scope for betterment:
+1.Some refinement to be done for reminders logic.
+2.Unit Tests Addition.
 
 # ToDo List
 <img src="https://user-images.githubusercontent.com/42260005/45251396-1a596300-b363-11e8-96b5-75bf8357c7a1.jpg" width="300px"/>
