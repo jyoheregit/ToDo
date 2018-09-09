@@ -13,7 +13,7 @@ extension ToDo {
     
     func createReminder() {
         
-        guard UserDefaults.standard.bool(forKey: Constants.Event.ReminderAccess) == true else {return}
+        guard UserDefaults.standard.bool(forKey: Constants.Event.ReminderAccess) == true else { return }
         
         let eventStore = EventsManager.shared.eventStore
         let reminder = EKReminder(eventStore: eventStore)
@@ -23,11 +23,37 @@ extension ToDo {
             reminder.title = title
             reminder.isCompleted = completed
             reminder.notes = desc
-            reminder.completionDate = self.reminder
+            if let reminderDate = self.reminder{
+                reminder.addAlarm(EKAlarm.init(absoluteDate: reminderDate))
+            }
 
             do {
                 try eventStore.save(reminder, commit: true)
                 reminderIdentifier = reminder.calendarItemIdentifier
+            } catch {
+                print("Error trying to save Reminder")
+                print("\(error.localizedDescription)")
+            }
+        }
+    }
+    
+    func updateReminder() {
+        
+        guard UserDefaults.standard.bool(forKey: Constants.Event.ReminderAccess) == true, let reminderIdentifier = reminderIdentifier else { return }
+        
+        let eventStore = EventsManager.shared.eventStore
+        let reminder = eventStore.calendarItem(withIdentifier: reminderIdentifier)
+        
+        if let reminder = reminder as? EKReminder {
+            reminder.title = title
+            reminder.isCompleted = completed
+            reminder.notes = desc
+            if let reminderDate = self.reminder{
+                reminder.addAlarm(EKAlarm.init(absoluteDate: reminderDate))
+            }
+            
+            do {
+                try eventStore.save(reminder, commit: true)
             } catch {
                 print("Error trying to save Reminder")
                 print("\(error.localizedDescription)")

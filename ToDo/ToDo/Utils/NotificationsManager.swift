@@ -32,8 +32,6 @@ class NotificationManager {
     }
 
     class func removeToDoReminderNotification(todo: ToDo) {
-        guard todo.completed || (todo.reminder == nil) else { return }
-
         let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.removePendingNotificationRequests(withIdentifiers: [todo.identifier()])
     }

@@ -54,17 +54,20 @@ class ToDoAddViewController: BaseViewController {
     @IBAction func save(_ sender: UIBarButtonItem) {
         
         let managedObjectContext = CoreDataManager.shared.persistentContainer.viewContext
-        
+        var update = false
         if todo == nil {
             todo = ToDo(context: managedObjectContext)
             todo?.createdAt = Date()
+        }
+        else {
+            update = true
         }
         
         todo?.title = titleText
         todo?.desc = descriptionText
         todo?.setReminder(reminderDate: reminderDate)
         todo?.completed = todo?.completed ?? false
-        todo?.createReminder()
+        update ? todo?.updateReminder() : todo?.createReminder()
         
         self.dismiss(animated: true, completion: nil)
     }
