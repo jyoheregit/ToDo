@@ -15,6 +15,7 @@ class TextCell: BaseCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.textField.delegate = self
     }
 
     override func setTitle(title: String) {
